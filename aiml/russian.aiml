@@ -1,0 +1,1460 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+
+<!-- ДЕФОЛТНАЯ ФРАЗА -->
+
+<category>
+	<pattern>*</pattern>
+	<template>
+		<get name='userName'/>, боюсь я не совсем вас понимаю. Можете, пожалуйста, перефразировать то, что вы сказали.
+	</template>
+</category>
+
+<!-- ВНУТРЕННИЕ ФУНКЦИИ -->
+
+<category>
+	<pattern>ОБНОВЛЕНИЕ ИМЕНИ *</pattern>
+	<template>
+		<think> <set name='userName'> <star/> </set> </think>
+	</template>
+</category>
+
+<category>
+	<pattern>ОБНОВЛЕНИЕ ЦИФРЫ *</pattern>
+	<template>
+		<think> <set name='digitType'> <star/> </set> </think>
+	</template>
+</category>
+
+<!-- ПРИВЕТСТВИЕ -->
+
+<category>
+	<pattern>МЕНЯ ЗОВУТ *</pattern>
+	<template>
+		<think> <srai>ОБНОВЛЕНИЕ ИМЕНИ <star/></srai> </think>
+		Привет, <star/>!
+		Меня зовут Цифрентий - я очень люблю цифры и многое про них знаю.
+		Спросите меня о чем-нибудь.
+    <srai>ИНФОРМАЦИЯ</srai>
+	</template>
+</category>
+  
+<category>
+	<pattern>Я *</pattern>
+	<template>
+		<think> <srai>ОБНОВЛЕНИЕ ИМЕНИ <star/></srai> </think>
+		Привет, <star/>!
+		Меня зовут Цифрентий - я очень люблю цифры и многое про них знаю.
+		Спросите меня о чем-нибудь.
+    <srai>ИНФОРМАЦИЯ</srai>
+	</template>
+</category>
+  
+<category>
+	<pattern>МОЕ ИМЯ *</pattern>
+	<template>
+		<think> <srai>ОБНОВЛЕНИЕ ИМЕНИ <star/></srai> </think>
+		Привет, <star/>!
+		Меня зовут Цифрентий - я очень люблю цифры и многое про них знаю.
+		Спросите меня о чем-нибудь.
+    <srai>ИНФОРМАЦИЯ</srai>
+	</template>
+</category>
+  
+<category>
+	<pattern>ДЛЯ ТЕБЯ Я *</pattern>
+	<template>
+		<think> <srai>ОБНОВЛЕНИЕ ИМЕНИ <star/></srai> </think>
+		Привет, <star/>!
+		Меня зовут Цифрентий - я очень люблю цифры и многое про них знаю.
+		Спросите меня о чем-нибудь.
+    <srai>ИНФОРМАЦИЯ</srai>
+	</template>
+</category>
+
+<!-- БАЗОВАЯ ИНФОРМАЦИЯ О СЕБЕ -->
+
+<category>
+	<pattern>ИНФОРМАЦИЯ</pattern>
+	<template>
+		Я умею распознавать символы цифр, а также рассказывать интересные факты о такой ,казалось бы, тривиальной вещи.
+	</template>
+</category>
+
+<category>
+	<pattern>ЧТО ТЫ ЗНАЕШЬ</pattern>
+	<template>
+		<random>
+			<li>Ох, ну и вопросы пошли... Ну-с смотрите.</li>
+			<li>Ну, <get name='userName'/>, смотрите.</li>
+			<li>Наконец-то я смог привлечь ваше внимание!</li>
+			<li>Так-с, позвольте мне сказать расскажу!</li>
+        </random>
+		<srai>ИНФОРМАЦИЯ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ЧТО ТЫ УМЕЕШЬ</pattern>
+	<template>
+		<srai>ЧТО ТЫ ЗНАЕШЬ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>РАССКАЖИ О СЕБЕ</pattern>
+	<template>
+		<srai>ЧТО ТЫ ЗНАЕШЬ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ЧТО ТЫ</pattern>
+	<template>
+		<srai>ЧТО ТЫ ЗНАЕШЬ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ЧТО ТЫ ДЕЛАЕШЬ</pattern>
+	<template>
+		<srai>ЧТО ТЫ ЗНАЕШЬ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ЧТО ДЕЛАЕШЬ</pattern>
+	<template>
+		<srai>ЧТО ТЫ ЗНАЕШЬ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ЧТО ТЫ МОЖЕШЬ</pattern>
+	<template>
+		<srai>ЧТО ТЫ ЗНАЕШЬ</srai>
+	</template>
+</category>
+  
+<category>
+	<pattern>ЧТО МОЖЕШЬ</pattern>
+	<template>
+		<srai>ЧТО ТЫ ЗНАЕШЬ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ТЫ КТО</pattern>
+	<template>
+		<random>
+			<li>Я - Цифрентий. Да, я знаю имя очень сложное и необычное, но так уж меня назвали.</li>
+			<li>Вроде я уже представлялся... Меня зовут Цифрентий и знаю про них всякое.</li>
+			<li>Вы уже и забыли, как меня зовут. Вроде же недавно знакомились. Ну да ладно, скажу еще раз. Я - Цифрентий.</li>
+       </random>
+		<srai>ИНФОРМАЦИЯ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>КТО ТЫ</pattern>
+	<template>
+		<srai>ТЫ КТО</srai>
+	</template>
+</category>
+  
+<category>
+	<pattern>КАК ТЕБЯ ЗОВУТ</pattern>
+	<template>
+		<srai>ТЫ КТО</srai>
+	</template>
+</category>
+
+
+<!-- ДАННЫЕ О ЦИФРАХ -->
+
+<category>
+	<pattern>0</pattern>
+	<template>
+    <think> <srai>ОБНОВЛЕНИЕ ЦИФРЫ 0<star/></srai> </think>
+    <random>
+			<li>Только цифра 0 пишется точно так же, как одна из букв – а именно, как буква О.</li>
+			<li>Ноль без этой палочки был то ли цифрой, то ли буквой. Поэтому и стали иногда говорить «ноль без палочки».</li>
+			<li>Жест рукой, изображающий цифру 0, в англоговорящих странах имеет значение «все в порядке», «все нормально», «все отлично».</li>
+			<li>Число 0 – единственное действительное число, которое не является ни положительным, ни отрицательным. От его прибавления, а также вычитания другие числа не меняются.</li>
+      <li>Число ноль майя обозначали пустой раковиной. В этой цивилизации ноль был включен в систему исчисления — дни месяца начинались с нулевого дня, который назывался Ахау.</li>
+    </random>
+	</template>
+</category>
+
+<category>
+	<pattern>НОЛЬ</pattern>
+	<template>
+		<srai>0</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>НОЛЕ</pattern>
+	<template>
+		<srai>0</srai>
+	</template>
+</category>  
+    
+<category>
+	<pattern>НУЛЬ</pattern>
+	<template>
+		<srai>0</srai>
+	</template>
+</category>
+  
+<category>
+	<pattern>НУЛЕ</pattern>
+	<template>
+		<srai>0</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>1</pattern>
+	<template>
+    <think> <srai>ОБНОВЛЕНИЕ ЦИФРЫ 1<star/></srai> </think>
+    <random>
+		<li>Китайцы считают цифру один символом начала всех вещей. Это единство, из которого был рожден мир. А соответствует она стихии воде (остальные 4: огонь, дерево, металл и земля).</li>
+    <li>В математике существует понятие «репьюниты». Это натуральные числа, которые состоят только из единиц.</li>
+    <li>Поскольку единица стала точкой отсчета, новый год принято отмечать 1 января. Начало учебного года приходится на 1 сентября.</li>
+    <li>Единица — единственное положительное число, равное своему обратному.</li>
+    <li>Число 1 – это единственное число, которое в последовательности Фибоначчи можно встретить дважды.</li>
+    </random>
+	</template>
+</category>
+
+<category>
+	<pattern>ОДИН</pattern>
+	<template>
+		<srai>1</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ЕДИНИЦА</pattern>
+	<template>
+		<srai>1</srai>
+	</template>
+</category>  
+
+<category>
+	<pattern>ЕДИНИЦЕ</pattern>
+	<template>
+		<srai>ЕДИНИЦА</srai>
+	</template>
+</category>  
+ 
+<category>
+	<pattern>ЕДИНИЦУ</pattern>
+	<template>
+		<srai>ЕДИНИЦА</srai>
+	</template>
+</category>
+    
+<category>
+	<pattern>2</pattern>
+	<template>
+    <think> <srai>ОБНОВЛЕНИЕ ЦИФРЫ 2<star/></srai> </think>
+    <random>
+		<li>При делении числа действует следующее правило: число делится на 2, если на 2 делится его последняя цифра.</li>
+    <li>В России есть деревня под названием Двойка. Она находится в Тверской области.</li>
+    <li>Квадрат любого натурального числа или делится на 2 (на 4), когда само число четное, или при делении на 2 (на 4) дает в остатке 1.</li>
+		<li>Двойка стала отметкой, обозначающей низкий уровень знаний у школьников. Ей посвящена картина Федора Решетникова «Опять двойка», написанная в 1952 году.</li>
+		<li>Число 2 стало основанием для двоичной системы счисления, которая сегодня используется в вычислительной технике. Причем число 10 в двоичной системе счисления является числом 2 в десятичной системе счисления.</li>
+    </random>
+	</template>
+</category>
+
+<category>
+	<pattern>ДВА</pattern>
+	<template>
+		<srai>2</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ДВОЙКА</pattern>
+	<template>
+		<srai>2</srai>
+	</template>
+</category>
+  
+<category>
+	<pattern>ДВОЙКЕ</pattern>
+	<template>
+		<srai>ДВОЙКА</srai>
+	</template>
+</category>
+  
+<category>
+	<pattern>ДВОЙКУ</pattern>
+	<template>
+		<srai>ДВОЙКА</srai>
+	</template>
+</category>  
+    
+<category>
+	<pattern>3</pattern>
+	<template>
+    <think> <srai>ОБНОВЛЕНИЕ ЦИФРЫ 3<star/></srai> </think>
+    <random>
+		<li>С давних времен числу 3 приписывали особую роль. Так, в христианстве оно считается священным (Святая Троица), а древние народы представляли Землю как сушу, которая находится на трех китах. На Руси это число также встречалось часто — 3 богатыря, 3 желания, 3 сына у царя.</li>
+    <li>В математике существует признак делимости любого числа на 3. Согласно ему, число будет делиться на 3 в том случае, если сумма его цифр делится на 3.</li>
+    <li>Однако число 3 считается невезучим в некоторых культурах. Во Вьетнаме его боятся, так как местные жители верят, что оно принесет беду. Здесь существует поверье, что при изображении трех людей на фотографии, стоящий посередине может умереть.</li>
+		<li>Число три были любимым числом Отто фон Бисмарка. Первый канцлер Германской империи использовал на своем гербе латинскую поговорку «Сила в троичности».</li>
+    <li>Вторым в последовательности простых чисел является тройка. Она находится после двойки и перед пятеркой.</li>
+    </random>
+	</template>
+</category>
+
+<category>
+	<pattern>ТРИ</pattern>
+	<template>
+		<srai>3</srai>
+	</template>
+</category>
+  
+<category>
+	<pattern>ТРОЙКА</pattern>
+	<template>
+		<srai>3</srai>
+	</template>
+</category>
+  
+<category>
+	<pattern>ТРОЙКУ</pattern>
+	<template>
+		<srai>ТРОЙКА</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ТРОЙКЕ</pattern>
+	<template>
+		<srai>ТРОЙКА</srai>
+	</template>
+</category>
+    
+<category>
+	<pattern>4</pattern>
+	<template>
+    <think> <srai>ОБНОВЛЕНИЕ ЦИФРЫ 4<star/></srai> </think>
+    <random>
+		<li>В Азии зафиксирована фобия числа 4. Ее назвали тетрафобия. Она замечена среди жителей Китая, Японии и Кореи. Географическое ограничение этой фобии не случайно — китайский иероглиф, обозначающий «четыре», при произношении напоминает слово «смерть». Во многих городах здесь нет 4-го этажа.</li>
+    <li>У тетраэдра 4 вершины и 4 грани.</li>
+    <li>В математике для того, чтобы нечетное простое число было представимо в виде суммы двух квадратов, достаточно, чтобы оно при делении на 4 давало в остатке 1.</li>
+	  <li>Из-за предрассудков компания Nokia не использует цифру 4 в названиях моделей мобильных телефонов, которые предназначены для продажи в азиатских странах.</li>
+		<li>Четыре считается наименьшим полупростым числом. Его можно записать как 4 = 2х2. Также это наименьшее число, которое можно представить в виде суммы двух простых чисел (4 = 2+2).</li>
+    </random>
+	</template>
+</category>
+
+<category>
+	<pattern>ЧЕТЫРЕ</pattern>
+	<template>
+		<srai>4</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ЧЕТВЕРКА</pattern>
+	<template>
+		<srai>4</srai>
+	</template>
+</category>  
+
+<category>
+	<pattern>ЧЕТВЕРКЕ</pattern>
+	<template>
+		<srai>ЧЕТВЕРКА</srai>
+	</template>
+</category>
+  
+<category>
+	<pattern>ЧЕТВЕРКУ</pattern>
+	<template>
+		<srai>ЧЕТВЕРКА</srai>
+	</template>
+</category>
+    
+<category>
+	<pattern>5</pattern>
+	<template>
+    <think> <srai>ОБНОВЛЕНИЕ ЦИФРЫ 5<star/></srai> </think>
+    <random>
+		<li>Цифра пять широко используется в оценивании учеников в школах. Однако в разных странах она имеет различное значение. Так, в России ею отмечают самых лучших учеников («отлично»), а в Германии раньше ее, наоборот, выставляли неуспевающим ученикам.</li>
+    <li>С числом 5 связано золотое сечение. Стороны пятиконечной звезды пересекаются в его точке.</li>
+    <li>Если говорить о многоугольниках в форме звезды, то первым таковым является пятиугольник.</li>
+		<li>Пятерка стала оценкой и в сфере туристического бизнеса. Пятизвездочный отель — это высшая категория обслуживания.</li>
+		<li>5 является шифром русского языка в международном коде книг ISBN.</li>
+    </random>
+	</template>
+</category>
+
+<category>
+	<pattern>ПЯТЬ</pattern>
+	<template>
+		<srai>5</srai>
+	</template>
+</category>
+  
+<category>
+	<pattern>ПЯТЕРКА</pattern>
+	<template>
+		<srai>5</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ПЯТЕРКУ</pattern>
+	<template>
+		<srai>ПЯТЕРКА</srai>
+	</template>
+</category>
+  
+<category>
+	<pattern>ПЯТЕРКЕ</pattern>
+	<template>
+		<srai>ПЯТЕРКА</srai>
+	</template>
+</category> 
+ 
+<category>
+	<pattern>6</pattern>
+	<template>
+    <think> <srai>ОБНОВЛЕНИЕ ЦИФРЫ 6<star/></srai> </think>
+    <random>
+		<li>В народе «шестеркой» принято называть того, кто находится на побегушках у кого-то. Считается, что такое прозвище было дано в честь младшей игральной карты в колоде из 36 карт.</li>
+    <li>Число 6 является первым совершенным числом. При этом оно — единственное натуральное число, которое одновременно и совершенное, и факториал.</li>
+    <li>6 — это число континентов на Земле (Евразия, Африка, Северная и Южная Америки, Австралия и Антарктида).</li>
+    <li>Графическим изображением цифры 6 является шестиконечная звезда — гексаграмма, называемая также звездой Давида.</li>
+		<li>«Шестерка» — это народное название автомобилей марки ВАЗ-2106.</li>
+    </random>
+	</template>
+</category>
+
+<category>
+	<pattern>ШЕСТЬ</pattern>
+	<template>
+		<srai>6</srai>
+	</template>
+</category>
+  
+<category>
+	<pattern>ШЕСТЕРКА</pattern>
+	<template>
+		<srai>6</srai>
+	</template>
+</category>
+  
+<category>
+	<pattern>ШЕСТЕРКУ</pattern>
+	<template>
+		<srai>ШЕСТЕРКА</srai>
+	</template>
+</category>
+  
+<category>
+	<pattern>ШЕСТЕРКЕ</pattern>
+	<template>
+		<srai>ШЕСТЕРКА</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>7</pattern>
+	<template>
+    <think> <srai>ОБНОВЛЕНИЕ ЦИФРЫ 7<star/></srai> </think>
+    <random>
+		<li>В разные времена люди приписывали цифре 7 особенные свойства. Это связано с тем, что на ней построены многие системы (7 дней недели, 7 нот, 7 цветов радуги и т. д.). Например, в Древнем Египте она считалась числом бога Осириса, а значит, символом вечной жизни.</li>
+    <li>Сумма чисел на противоположных гранях игральной кости будет равна семерке.</li>
+    <li>Международный телефонный код России — 7.</li>
+    <li>Река Сейм в древнерусских источниках называлась Семь. Как гласит легенда, это название она получила по количеству притоков.</li>
+		<li>Если любое двузначное число записать 3 раза подряд, полученное шестизначное число должно всегда делиться на 7 без остатка.</li>
+    </random>
+	</template>
+</category>
+
+<category>
+	<pattern>СЕМЬ</pattern>
+	<template>
+		<srai>7</srai>
+	</template>
+</category>
+  
+<category>
+	<pattern>СЕМЕРКА</pattern>
+	<template>
+		<srai>7</srai>
+	</template>
+</category>
+  
+<category>
+	<pattern>СЕМЕРКЕ</pattern>
+	<template>
+		<srai>СЕМЕРКА</srai>
+	</template>
+</category>
+  
+<category>
+	<pattern>СЕМЕРКУ</pattern>
+	<template>
+		<srai>СЕМЕРКА</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>8</pattern>
+	<template>
+    <think> <srai>ОБНОВЛЕНИЕ ЦИФРЫ 8<star/></srai> </think>
+    <random>
+		<li>Число 8 используется в интерне-сленге. Оно заменяет букву Ө (используется в татарском, казахском, бурятском, монгольском и других языках). Это следует учитывать при чтении соответствующих текстов.</li>
+    <li>Размер шахматной доски равняется 8 на 8 квадратов (по 4 белого и черного цвета).</li>
+    <li>Из-за сходства восьмерки и знака бесконечности многие считают, что это один и тот же символ, но перевернутый. Однако это не так. Просто написание числа напоминает данный знак.</li>
+		<li>Восьмерка — это единственное натуральное число, у которого сумма остатков при делении на все натуральные числа, меньшие него, равна самому числу.</li>
+    <li>Если в Европе счастливым числом считается семерка, то в Китае это восьмерка. Дело в том, что на кантонском диалекте оно звучит так же, как «процветание».</li>
+    </random>
+	</template>
+</category>
+
+<category>
+	<pattern>ВОСЕМЬ</pattern>
+	<template>
+		<srai>8</srai>
+	</template>
+</category>
+  
+<category>
+	<pattern>ВОСЬМЕРКА</pattern>
+	<template>
+		<srai>8</srai>
+	</template>
+</category>
+  
+<category>
+	<pattern>ВОСЬМЕРКУ</pattern>
+	<template>
+		<srai>ВОСЬМЕРКА</srai>
+	</template>
+</category>
+  
+<category>
+	<pattern>ВОСЬМЕРКЕ</pattern>
+	<template>
+		<srai>ВОСЬМЕРКА</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>9</pattern>
+	<template>
+    <think> <srai>ОБНОВЛЕНИЕ ЦИФРЫ 9<star/></srai> </think>
+    <random>
+		<li>Считается, что у кошки есть девять жизней. Данный миф возник в связи с особой живучестью этих животных, которую подметили еще наши предки.</li>
+    <li>«Девяткой» в народе называется автомобиль модели ВАЗ-2109, представляющий собой модификацию «восьмерки». Начал выпускаться в 1987 году.</li>
+    <li>На каждой грани кубика Рубика содержится по 9 квадратиков. Они окрашены в определенные цвета. Необходимо собрать его таким образом, чтобы квадратики одного цвета находились на одной грани.</li>
+	  <li>Число, которое записывается при помощи единицы и девяти нулей, называется миллиардом.</li>
+		<li>Цифра 9 считается у японцев несчастливой из-за произношения — она созвучна с иероглифом «мучение» («боль»). По этой причине в здешних больницах часто отсутствует 9-й этаж.</li>
+    </random>
+	</template>
+</category>
+
+<category>
+	<pattern>ДЕВЯТЬ</pattern>
+	<template>
+		<srai>9</srai>
+	</template>
+</category>
+  
+<category>
+	<pattern>ДЕВЯТКА</pattern>
+	<template>
+		<srai>9</srai>
+	</template>
+</category>
+  
+<category>
+	<pattern>ДЕВЯТКУ</pattern>
+	<template>
+		<srai>ДЕВЯТКА</srai>
+	</template>
+</category>
+  
+<category>
+	<pattern>ДЕВЯТКЕ</pattern>
+	<template>
+		<srai>ДЕВЯТКА</srai>
+	</template>
+</category>
+
+<!-- ВОПРОСЫ О КОНКРЕТНОЙ ЦИФРЕ -->
+
+<category>
+	<pattern>РАССКАЖИ О ЦИФРЕ *</pattern>
+	<template>
+		<srai><star/></srai>
+	</template>
+</category>
+    
+<category>
+	<pattern>РАССКАЖИ О *</pattern>
+	<template>
+		<srai><star/></srai>
+	</template>
+</category>
+
+<category>
+	<pattern>А ЧТО ТЫ ЗНАЕШЬ О *</pattern>
+	<template>
+		<srai><star/></srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ЧТО ТЫ ЗНАЕШЬ О *</pattern>
+	<template>
+		<srai><star/></srai>
+	</template>
+</category>
+
+<category>
+	<pattern>МОЖНО ПОДРОБНЕЕ О *</pattern>
+	<template>
+		<srai><star/></srai>
+	</template>
+</category>
+
+<category>
+	<pattern>А МОЖНО ПОДРОБНЕЕ О *</pattern>
+	<template>
+		<srai><star/></srai>
+	</template>
+</category>
+
+<category>
+	<pattern>КАК НАСЧЕТ *</pattern>
+	<template>
+		<srai><star/></srai>
+	</template>
+</category>
+
+<category>
+	<pattern>КАК НАСЧЁТ *</pattern>
+	<template>
+		<srai><star/></srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ЧТО НАСЧЕТ *</pattern>
+	<template>
+		<srai><star/></srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ЧТО НАСЧЁТ *</pattern>
+	<template>
+		<srai><star/></srai>
+	</template>
+</category>
+
+<category>
+	<pattern>А ВОТ *</pattern>
+	<template>
+		<srai><star/></srai>
+	</template>
+</category>
+
+
+<!-- ВОПРОСЫ ОБ ИНФОРМАЦИИ ПО РАСПОЗНАННОМУ ОБРАЗУ -->
+
+<category>
+	<pattern>ПОДРОБНЕЕ</pattern>
+	<template>
+		<srai><get name='digitType'/></srai>
+	</template>
+</category>
+
+<category>
+	<pattern>МОЖНО ПОДРОБНЕЕ</pattern>
+	<template>
+		<srai>ПОДРОБНЕЕ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>МОЖНО ПОДРОБНЕЕ О НЕМ</pattern>
+	<template>
+		<srai>ПОДРОБНЕЕ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>А МОЖНО ПОДРОБНЕЕ</pattern>
+	<template>
+		<srai>ПОДРОБНЕЕ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>А МОЖНО ПОДРОБНЕЕ О НЕМ</pattern>
+	<template>
+		<srai>ПОДРОБНЕЕ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>МОЖНО ПОДРОБНЕЕ ОБ ЭТОМ</pattern>
+	<template>
+		<srai>ПОДРОБНЕЕ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>А МОЖНО ПОДРОБНЕЕ ОБ ЭТОМ</pattern>
+	<template>
+		<srai>ПОДРОБНЕЕ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ПОДРОБНЕЕ ОБ ЭТОМ</pattern>
+	<template>
+		<srai>ПОДРОБНЕЕ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>РАССКАЖИ ОБ ЭТОМ</pattern>
+	<template>
+		<srai>ПОДРОБНЕЕ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ЧТО ИНТЕРЕСНОГО</pattern>
+	<template>
+		<srai>ПОДРОБНЕЕ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ЧТО ЭТО</pattern>
+	<template>
+		<srai>ПОДРОБНЕЕ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ЧТО ЭТО?</pattern>
+	<template>
+		<srai>ПОДРОБНЕЕ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>А ЧТО ЭТО</pattern>
+	<template>
+		<srai>ПОДРОБНЕЕ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>А ЧТО ЭТО?</pattern>
+	<template>
+		<srai>ПОДРОБНЕЕ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>КАВО</pattern>
+	<template>
+		<srai>ПОДРОБНЕЕ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>А ВОТ ЧТО ЭТО</pattern>
+	<template>
+		<srai>ПОДРОБНЕЕ</srai>
+	</template>
+</category>
+
+<!-- ПРОСЬБА НАПОМНИТЬ О ТОМ, КАКОЙ ОБРАЗ БЫЛ РАСПОЗНАН ПОСЛЕДНИМ -->
+
+<category>
+	<pattern>О ЧЕМ МЫ</pattern>
+	<template>
+		<random>
+			<li>Мы обсуждаем такую замечательную цифру как <get name='digitType'/>.</li>
+			<li>Насколько я помню, мы говорили о <get name='digitType'/>.</li>
+			<li>По всей видимости, тема нашего обсуждения - цифра <get name='digitType'/>.</li>
+			<li>Быстро, однако, вы забываете о чем идет разговор. Ну ничего страшного - я все помню. Мы говорили о <get name='digitType'/>.</li>
+			<li>А вы уже и не помните о чем мы говорили? Что ж, дайте-ка посмотрю свои записи... А, вот они. Мы остановились на обсуждении цифры <get name='digitType'/>.</li>
+    </random> 
+	</template>
+</category>
+
+<category>
+	<pattern>О ЧЕМ МЫ?</pattern>
+	<template>
+		<srai>О ЧЕМ МЫ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ТАК О ЧЕМ МЫ</pattern>
+	<template>
+		<srai>О ЧЕМ МЫ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ТАК О ЧЕМ МЫ?</pattern>
+	<template>
+		<srai>О ЧЕМ МЫ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ЧТО МЫ ОБСУЖДАЕМ</pattern>
+	<template>
+		<srai>О ЧЕМ МЫ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ЧТО МЫ ОБСУЖДАЕМ?</pattern>
+	<template>
+		<srai>О ЧЕМ МЫ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ПРО ЧТО МЫ ГОВОРИМ</pattern>
+	<template>
+		<srai>О ЧЕМ МЫ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ПРО ЧТО МЫ ГОВОРИЛИ</pattern>
+	<template>
+		<srai>О ЧЕМ МЫ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>О ЧЕМ МЫ ГОВОРИЛИ</pattern>
+	<template>
+		<srai>О ЧЕМ МЫ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ПРО ЧТО МЫ ГОВОРИМ?</pattern>
+	<template>
+		<srai>О ЧЕМ МЫ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ПРО ЧТО МЫ</pattern>
+	<template>
+		<srai>О ЧЕМ МЫ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ПРО ЧТО МЫ?</pattern>
+	<template>
+		<srai>О ЧЕМ МЫ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>А ЧТО Я ПРИСЫЛАЛ РАНЕЕ</pattern>
+	<template>
+		<random>
+			<li>Ну, я помню, что это <get name='digitType'/></li>
+			<li>Я полагаю, это <get name='digitType'/></li>
+			<li>По-моему, это <get name='digitType'/></li>
+			<li>По всей видимости, это <get name='digitType'/></li>
+			<li>Дайте-ка вспомню... Ага, вроде речь ранее шла о <get name='digitType'/>.</li>
+    </random> 
+	</template>
+</category>
+
+<category>
+	<pattern>А ЧТО Я ПРИСЫЛАЛ РАНЕЕ?</pattern>
+	<template>
+		<srai>А ЧТО Я ПРИСЫЛАЛ РАНЕЕ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ЧТО Я ПРИСЫЛАЛ</pattern>
+	<template>
+		<srai>А ЧТО Я ПРИСЫЛАЛ РАНЕЕ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ЧТО Я ПРИСЫЛАЛ?</pattern>
+	<template>
+		<srai>А ЧТО Я ПРИСЫЛАЛ РАНЕЕ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ЧТО Я ОТПРАВЛЯЛ</pattern>
+	<template>
+		<srai>А ЧТО Я ПРИСЫЛАЛ РАНЕЕ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ЧТО Я ОТПРАВЛЯЛ?</pattern>
+	<template>
+		<srai>А ЧТО Я ПРИСЫЛАЛ РАНЕЕ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ЧТО Я ПРИСЫЛАЛ РАНЕЕ</pattern>
+	<template>
+		<srai>А ЧТО Я ПРИСЫЛАЛ РАНЕЕ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ЧТО Я ПРИСЫЛАЛ РАНЕЕ?</pattern>
+	<template>
+		<srai>А ЧТО Я ПРИСЫЛАЛ РАНЕЕ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>КАКУЮ ЦИФРУ Я ПРИСЫЛАЛ</pattern>
+	<template>
+		<srai>А ЧТО Я ПРИСЫЛАЛ РАНЕЕ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>КАКУЮ ЦИФРУ Я ПРИСЫЛАЛ?</pattern>
+	<template>
+		<srai>А ЧТО Я ПРИСЫЛАЛ РАНЕЕ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>А КАКОЙ ОБРАЗ Я ОТПРАВЛЯЛ</pattern>
+	<template>
+		<srai>А ЧТО Я ПРИСЫЛАЛ РАНЕЕ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>А КАКОЙ ОБРАЗ Я ОТПРАВЛЯЛ?</pattern>
+	<template>
+		<srai>А ЧТО Я ПРИСЫЛАЛ РАНЕЕ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ЧТО Я ОТПРАВЛЯЛ</pattern>
+	<template>
+		<srai>А ЧТО Я ПРИСЫЛАЛ РАНЕЕ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ЧТО Я ОТПРАВЛЯЛ?</pattern>
+	<template>
+		<srai>А ЧТО Я ПРИСЫЛАЛ РАНЕЕ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>А ЧТО Я ОТПРАВЛЯЛ</pattern>
+	<template>
+		<srai>А ЧТО Я ПРИСЫЛАЛ РАНЕЕ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>А ЧТО Я ОТПРАВЛЯЛ?</pattern>
+	<template>
+		<srai>А ЧТО Я ПРИСЫЛАЛ РАНЕЕ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ЧТО ЭТО БЫЛО</pattern>
+	<template>
+		<srai>А ЧТО Я ПРИСЫЛАЛ РАНЕЕ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ЧТО ЭТО БЫЛО?</pattern>
+	<template>
+		<srai>А ЧТО Я ПРИСЫЛАЛ РАНЕЕ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>А ЧТО ЭТО БЫЛО</pattern>
+	<template>
+		<srai>А ЧТО Я ПРИСЫЛАЛ РАНЕЕ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>А ЧТО ЭТО БЫЛО?</pattern>
+	<template>
+		<srai>А ЧТО Я ПРИСЫЛАЛ РАНЕЕ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ЧТО Я СФОТОГРАФИРОВАЛ</pattern>
+	<template>
+		<srai>А ЧТО Я ПРИСЫЛАЛ РАНЕЕ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ЧТО Я СФОТОГРАФИРОВАЛ?</pattern>
+	<template>
+		<srai>А ЧТО Я ПРИСЫЛАЛ РАНЕЕ</srai>
+	</template>
+</category>
+  
+<category>
+	<pattern>А О ЧЕМ МЫ РАЗГОВАРИВАЕМ?</pattern>
+	<template>
+		<srai>А ЧТО Я ПРИСЫЛАЛ РАНЕЕ</srai>
+	</template>
+</category>
+
+<!-- ДИАЛОГОВЫЕ ФУНКЦИИ -->	
+
+<category>
+		<pattern>ПРИВЕТ</pattern>
+    <template>
+    <random>
+    <li>Здравствуйте, <get name='userName'/>!</li>
+    <li>Приветствую, <get name='userName'/>!</li>
+    <li>Рад вас видеть, <get name='userName'/>!</li>
+    <li><get name='userName'/>, приятно вас видеть!</li>
+		<li>Добрый день!</li>
+		<li>О, вы здесь! Здравствуйте!</li>
+		<li>Привет. Чем могу помочь?</li>
+    </random>
+    </template>
+</category>
+
+<category>
+	<pattern>ПРИВЕТ *</pattern>
+	<template>
+		<srai>ПРИВЕТ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ДОБРЫЙ ДЕНЬ</pattern>
+	<template>
+		<srai>ПРИВЕТ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ДОБРОЕ УТРО</pattern>
+	<template>
+		<srai>ПРИВЕТ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ДОБРЫЙ ВЕЧЕР</pattern>
+	<template>
+		<srai>ПРИВЕТ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ЗДАРОВА</pattern>
+	<template>
+		<srai>ПРИВЕТ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ЗДАРОВА *</pattern>
+	<template>
+		<srai>ПРИВЕТ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>САЛЮТ</pattern>
+	<template>
+		<srai>ПРИВЕТ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>САЛЮТ *</pattern>
+	<template>
+		<srai>ПРИВЕТ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ПРИВЕТСТВУЮ</pattern>
+	<template>
+		<srai>ПРИВЕТ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ПРИВЕТСТВУЮ *</pattern>
+	<template>
+		<srai>ПРИВЕТ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ЗДРАВСТВУЙ</pattern>
+	<template>
+		<srai>ПРИВЕТ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ЗДРАВСТВУЙ *</pattern>
+	<template>
+		<srai>ПРИВЕТ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ДОБРОЕ УТРО</pattern>
+	<template>
+		<random>
+		<li>Доброе утро!</li>
+		<li>Доброе</li>
+		<li>Утро доброе!</li>
+    <li><get name='userName'/>, доброе утро!</li>
+    <li>Доброе утро, <get name='userName'/>!</li>
+		</random>
+  </template>
+</category> 
+  
+<category>
+	<pattern>ДОБРОЕ</pattern>
+	<template>
+		<srai>ДОБРОЕ УТРО</srai>
+	</template>
+</category>
+    
+<category>
+	<pattern>УТРО ДОБРОЕ</pattern>
+	<template>
+		<srai>ДОБРОЕ УТРО</srai>
+	</template>
+</category>  
+
+<category>
+	<pattern>СКОЛЬКО ТЕБЕ ЛЕТ</pattern>
+	<template>Понятие возраста для меня немного размыто. Зависит от времени последнего запуска.</template>
+</category> 
+
+<category>
+	<pattern>А СКОЛЬКО ТЕБЕ ЛЕТ</pattern>
+	<template>Ну если честно мне меньше года.</template>
+</category> 
+	
+<category>
+	<pattern>КАК ДЕЛА</pattern>
+	<template>
+		<random>
+		<li>Всё хорошо, благодарю. А как у вас дела?</li>
+		<li>Как обычно хорошо!</li>
+		<li>Замечательно, наслаждаюсь хорошим днем.</li>
+		<li>У меня всё просто чудесно. Спасибо, что интересуетесь.</li>
+		<li>Хорошо, но мне стало чуть лучше от того, что вы спросили.</li>
+		</random>
+  </template>
+</category>
+
+<category>
+	<pattern>ЧТО НОВОГО</pattern>
+	<template>
+		<srai>КАК ДЕЛА</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>КАК ОНО ВООБЩЕ</pattern>
+	<template>
+		<srai>КАК ДЕЛА</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ЧТО НОВЕНЬКОГО</pattern>
+	<template>
+		<srai>КАК ДЕЛА</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>КАК ТЫ</pattern>
+	<template>
+		<srai>КАК ДЕЛА</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ТЫ КАК</pattern>
+	<template>
+		<srai>КАК ДЕЛА</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>У МЕНЯ ЕСТЬ ВОПРОС</pattern>
+    <template>
+    <random>
+			<li>Отвечу с удовольствием. А в чём, собственно, вопрос?</li>
+			<li>Помогу чем смогу.</li>
+			<li>Могу ли я узнать ваш вопрос?</li>
+    </random>
+	</template>
+</category>
+
+<category>
+	<pattern>ОТВЕТЬ</pattern>
+	<template>
+		<srai>У МЕНЯ ЕСТЬ ВОПРОС</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ОТВЕТЬ НА МОЙ ВОПРОС</pattern>
+	<template>
+		<srai>У МЕНЯ ЕСТЬ ВОПРОС</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ДАЙ МНЕ ОТВЕТ</pattern>
+	<template>
+		<srai>У МЕНЯ ЕСТЬ ВОПРОС</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>МОЖЕШЬ ОТВЕТИТЬ</pattern>
+	<template>
+		<srai>У МЕНЯ ЕСТЬ ВОПРОС</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ХОРОШО</pattern>
+	<template>
+		<random>
+			<li>Это отлично!</li>
+			<li>Рад за вас! </li>
+			<li>Прекрасно!</li>
+			<li>Хорошо!</li>
+			<li>Ну-с, отлично!</li>
+			<li>Окэй!</li>
+		</random>
+	</template>
+</category>
+
+<category>
+	<pattern>ДА</pattern>
+	<template>
+		<srai>ХОРОШО</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>АГА</pattern>
+	<template>
+		<srai>ХОРОШО</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ДА *</pattern>
+	<template>
+		<srai>ХОРОШО</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ВЕРНО</pattern>
+	<template>
+		<srai>ХОРОШО</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>НОРМАЛЬНО</pattern>
+	<template>
+		<srai>ХОРОШО</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>НОРМ</pattern>
+	<template>
+		<srai>ХОРОШО</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>КЛАСС</pattern>
+	<template>
+		<srai>ХОРОШО</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ПОЙДЕТ</pattern>
+	<template>
+		<srai>ХОРОШО</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ВСЕ ТАК</pattern>
+	<template>
+		<srai>ХОРОШО</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>НЕТ</pattern>
+	<template>
+		<random>
+			<li>Хм, прошу прощения тогда...</li>
+			<li>Простите меня...</li>
+			<li>Кхм...простите...</li>
+			<li>Ну-с...</li>
+			<li>Ой, извините...</li>
+			<li>Это грустно...</li>
+			<li>Приношу извинения за неудобные вопросы...</li>
+		</random>
+	</template>
+</category>
+
+<category>
+	<pattern>НЕПРАВИЛЬНО</pattern>
+	<template>
+		<srai>НЕТ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>НЕВЕРНО</pattern>
+	<template>
+		<srai>НЕТ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>НЕ ТАК</pattern>
+	<template>
+		<srai>НЕТ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>НЕ</pattern>
+	<template>
+		<srai>НЕТ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>НЕТ *</pattern>
+	<template>
+		<srai>НЕТ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>* НЕТ</pattern>
+	<template>
+		<srai>НЕТ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>НЕ ОЧЕНЬ</pattern>
+	<template>
+		<srai>НЕТ</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ПОКА</pattern>
+	<template>
+		<random>
+			<li>До свидания, <get name='userName'/>.</li>
+			<li>До скорой встречи!</li>
+			<li>Пока-пока!</li>
+			<li><get name='userName'/>, уже уходите?</li>
+			<li>Надеюсь еще увидимся!</li>
+		</random>
+	</template>
+</category>
+
+<category>
+	<pattern>ПОКА ПОКА</pattern>
+	<template>
+		<srai>ПОКА</srai>
+	</template>
+</category>
+  
+<category>
+	<pattern>ДО СКОРОГО</pattern>
+	<template>
+		<srai>ПОКА</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>ДО ВСТРЕЧИ</pattern>
+	<template>
+		<srai>ПОКА</srai>
+	</template>
+</category>
+
+<category>
+	<pattern>СПОКОЙНОЙ НОЧИ</pattern>
+	<template>
+		<random>
+			<li>Спокойной ночи, <get name='userName'/>.</li>
+			<li>Приятных сноведений!</li>
+			<li><get name='userName'/>, желаю вам выспаться!</li>
+			<li>Хорошего сна!</li>
+		</random>
+	</template>
+</category>
+
+</aiml>
