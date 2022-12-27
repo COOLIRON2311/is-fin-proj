@@ -74,10 +74,13 @@ namespace AIMLTGBot
                 }
                 else
                 {
+                    var answer = aiml.Talk(chatId, username, messageText);
+                    if (answer == "")
+                        answer = "Не совсем вас понял";
                     // Echo received message text
                     await botClient.SendTextMessageAsync(
                         chatId: chatId,
-                        text: aiml.Talk(chatId, username, messageText),
+                        text: answer,
                         cancellationToken: cancellationToken);
                 }
 
